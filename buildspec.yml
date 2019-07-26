@@ -7,4 +7,4 @@ phases:
   build:
     commands:
       - echo 'hello'
-      - aws s3 cp code/ s3://amcarow/nested_templates --recursive --metadata GIT_SHA=$CODEBUILD_SOURCE_VERSION
+      - aws s3 cp code/ s3://amcarow --recursive --metadata GIT_SHA=$CODEBUILD_SOURCE_VERSION
