@@ -36,8 +36,7 @@
           }
         ]
       }
-    }
-  },
+    },
         "ExampleLambda": {
               "Type": "AWS::Lambda::Function",
               "Properties": {
@@ -52,5 +51,5 @@
                 }
               }
             }
-
+}
 }
