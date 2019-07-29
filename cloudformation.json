@@ -1,7 +1,7 @@
 {
   "AWSTemplateFormatVersion": "2010-09-09",
   "Resources": {
-    "DeleteMeRole": {
+    "ExampleRole": {
       "Type": "AWS::IAM::Role",
       "Properties": {
         "AssumeRolePolicyDocument": {
@@ -18,7 +18,7 @@
         },
         "Policies": [
           {
-            "PolicyName": "delete_me_policy",
+            "PolicyName": "example_policy",
             "PolicyDocument": {
               "Version": "2012-10-17",
               "Statement": [
@@ -37,5 +37,20 @@
         ]
       }
     }
-  }
+  },
+        "ExampleLambda": {
+              "Type": "AWS::Lambda::Function",
+              "Properties": {
+                "Handler": "hello.handler",
+                "Description": "AWS IAM user verification",
+                "Runtime": "python3.6",
+                "Timeout": 100,
+                "Role": { "Fn::GetAtt" : ["ExampleRole", "Arn"]},
+                "Code": {
+                  "S3Bucket": {"Fn::Sub" : "amcarow"},
+                  "S3Key": {"Fn::Sub" : "deploy_pkg.zip"}
+                }
+              }
+            }
+
 }
