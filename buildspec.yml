@@ -8,5 +8,5 @@ phases:
     commands:
       - echo 'hello'
       - mkdir lambda_deployment_pkg
-      - zip -r lambda_deployment_pkg/deploy_pkg.zip code
+      - zip -r lambda_deployment_pkg/hello.zip code
       - aws s3 cp lambda_deployment_pkg s3://amcarow --recursive --metadata GIT_SHA=$CODEBUILD_SOURCE_VERSION
