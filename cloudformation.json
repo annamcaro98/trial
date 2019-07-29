@@ -47,7 +47,7 @@
                 "Role": { "Fn::GetAtt" : ["ExampleRole", "Arn"]},
                 "Code": {
                   "S3Bucket": {"Fn::Sub" : "amcarow"},
-                  "S3Key": {"Fn::Sub" : "deploy_pkg.zip"}
+                  "S3Key": {"Fn::Sub" : "hello.zip"}
                 }
               }
             }
