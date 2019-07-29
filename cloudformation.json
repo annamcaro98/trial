@@ -40,7 +40,7 @@
         "ExampleLambda": {
               "Type": "AWS::Lambda::Function",
               "Properties": {
-                "Handler": "hello.handler",
+                "Handler": "code.handler",
                 "Description": "AWS IAM user verification",
                 "Runtime": "python3.6",
                 "Timeout": 100,
